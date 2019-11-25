@@ -8,6 +8,7 @@ image:
   # Image pull policy. Change to "IfNotPresent" when switching to stable images
   pullPolicy: Always
 
+
 ##
 ## StackStorm Enterprise settings (Optional)
 ##
@@ -209,7 +210,9 @@ st2web:
   # ingress:
   service:
     # type can be one of "ClusterIP", "NodePort", "LoadBalancer" or "ExternalName"
-    type: "NodePort"
+    type: "LoadBalancer"
+    ports:
+     - port: 80
     # The hostname associated with st2web service (externalName, added to external DNS, etc.)
     hostname: ""
     # For more information regarding annotations, see
